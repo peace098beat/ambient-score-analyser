@@ -1,5 +1,5 @@
 
-# Ambient Analysis
+# Ambient Analyser
 オーディオデータから、Loudness, Sharpness, Rughness を算出するやつ
 
 
@@ -29,7 +29,7 @@ example ディレクトリで実行してみよう
 
 ```sh
 ❯ cd example
-❯ amb example.wav
+❯ amb 1_bouba_woman.wav
 ```
 
 以下のようにファイルがたくさんつくられる
