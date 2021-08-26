@@ -7,45 +7,35 @@
 """
 import argparse
 
-
-import monolize
-
-def get_arg():
-
-    parser = argparse.ArgumentParser(description='ambient analyser')
-
-    parser.add_argument('--in_file', help='オーディオファイル')
-    parser.add_argument('--out_dir', help='出力先ディレクトリ')
-
-    args = parser.parse_args()
-
-    print('in_file='+args.in_file)
-    print('out_dir='+args.out_dir)
-
-    return args
+import monolizer
+import featurizer
 
 
-def run(in_file, out_dir):
+def run(in_file):
     
-    Path.mkdir(out_file, exist_ok=True, parents=True)
+    # 1. Monolize
+    mono_file = monolizer.to_mono(in_file)
 
-    out_file = Path(out_dir) / Path(in_file).name
+    # 2. Featurize
+    fig_path, json_path, sig_path = featurizer.run(mono_file)
 
-    # 作業ディレクトリ
+    outputs = [
+        mono_file,
+        fig_path,
+        json_path,
+        sig_path
+    ]
 
-    mono_file = monolize.to_mono(in_file, out_dir)
-
-    # pipeline 処理
-
-
-
-
-if __name__ == '__main__':
-    
-    args = get_arg()
-
-    main(args.in_file, args.out_dir)
+    return outputs
 
 
+# def get_arg():
+#     parser = argparse.ArgumentParser(description='ambient analyser')
+#     parser.add_argument('--in_file', help='オーディオファイル')
+#     args = parser.parse_args()
+#     print('in_file='+args.in_file)
+#     return args
 
-
+# if __name__ == '__main__':
+#     args = get_arg()
+#     main(args.in_file, args.out_dir)

@@ -3,7 +3,6 @@ import numpy as np
 # import pandas as pd
 from matplotlib import pyplot as plt
 import japanize_matplotlib
-
 from tqdm import tqdm
 
 from mosqito.functions.shared.load import load
@@ -15,18 +14,18 @@ from mosqito.functions.roughness_danielweber.comp_roughness import comp_roughnes
 
 
 
-def output(wav_path):
+def run(in_file):
 
-    fig_path = Path(wav_path).with_suffix(".jpg")
-    json_path = Path(wav_path).with_suffix(".json")
-    sig_path = Path(wav_path).with_suffix(".pkl")
+    in_file = str(in_file)
 
-    print(wav_path)
-    print(fig_path)
-    print(json_path)
+    # OUTPUT Files
+    fig_path = Path(in_file).with_suffix(".jpg")
+    json_path = Path(in_file).with_suffix(".json")
+    sig_path = Path(in_file).with_suffix(".pkl")
+
 
     # SIgnal
-    signal, fs = load( None, wav_path)
+    signal, fs = load( None, in_file)
 
     N = len(signal)
     y_signal = signal
@@ -56,7 +55,7 @@ def output(wav_path):
 
 
     data_json = {
-        "wav_path" : wav_path,
+        "in_file" : in_file,
         "loudness" : np.mean(loudness_sone), 
         "sharpness" : np.mean(sharp_acum), 
         "roughness" : np.mean(y_rough), 
@@ -127,20 +126,11 @@ def output(wav_path):
 
     plt.xlabel("Time [s]")
 
-    plt.suptitle(wav_path)
+    plt.suptitle(in_file)
 
     plt.tight_layout()
     plt.savefig(fig_path)
 
     plt.close()
 
-
-INTERIM_DIR = "../data/01_raw/3_dataset_mono"
-
-wave_paths = list(Path(INTERIM_DIR).glob("*.wav"))
-wave_paths = [str(p) for p in wave_paths]
-wave_paths.sort()
-
-for w in tqdm(wave_paths):
-    output(w)
-
+    return fig_path, json_path, sig_path
