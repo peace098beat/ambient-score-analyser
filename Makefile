@@ -1,6 +1,3 @@
-test1:
-	PYTHONPATH=./src pipenv run pytest ./tests/test_pipeline_dir.py
-
 test:
 	PYTHONPATH=./src pipenv run pytest ./tests/*
 

@@ -44,9 +44,10 @@ def cli(in_dir, ext, out_dir):
     in_dir = (work_dir / in_dir).resolve()
     out_dir = (work_dir / out_dir).resolve()
     
-    click.echo(f'Input Audio Dir:{work_dir}')
-    click.echo(f'Input Audio Dir:{in_dir}')
-    click.echo(f'Input Output Dir:{out_dir}')
+    click.echo(f'Work_dir Dir:{work_dir}')
+    click.echo(f'Input Dir:{in_dir}')
+    click.echo(f'Output Dir:{out_dir}')
+    
     click.echo(f'be Transforming... Plz take a coffee brake :D')
 
     try:
