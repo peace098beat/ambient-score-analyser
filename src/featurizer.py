@@ -74,10 +74,11 @@ def run(in_file):
     with open(json_path, mode='wt', encoding='utf-8') as fp:
         json.dump(data_json, fp, ensure_ascii=False, indent=2)
     del data_json
+    
     # ロード
     with open(json_path, mode='rt', encoding='utf-8') as fp:
         data = json.load(fp)
-        print(data)
+        # print(data)
 
     import pickle
     with open(sig_path, mode="wb") as fp:
@@ -86,7 +87,7 @@ def run(in_file):
 
     with open(sig_path, mode='rb') as fp:
         data_sig = pickle.load(fp)
-        print(data_sig)
+        # print(data_sig)
 
 
     plt.rcParams["font.size"] = 16
