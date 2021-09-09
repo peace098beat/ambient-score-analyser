@@ -84,7 +84,3 @@ def run_dir(in_dir, ext, out_dir):
     return out_files_s
 
 
-
-# if __name__ == '__main__':
-#     args = get_arg()
-#     main(args.in_file, args.out_dir)
