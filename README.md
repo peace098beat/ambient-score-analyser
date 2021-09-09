@@ -63,7 +63,7 @@ Fin! Check your sounds!  :D
 
 ## 使いかた
 
-example ディレクトリで実行してみよう
+example ディレクトリで実行してみて
 
 ```sh
 ❯ cd example
