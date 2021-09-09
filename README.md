@@ -74,12 +74,12 @@ example ディレクトリで実行してみて
 
 ```sh
 ❯ ls
-1_bouba_woman.wav 		# 元のファイル
+001-audio.wav 		# 元のファイル
 
-1_bouba_woman.mono.wav	# モノラル & WAV化したファイル
-1_bouba_woman.mono.json # 指標の値
-1_bouba_woman.mono.jpg  # いい感じにグラフ
-1_bouba_woman.mono.pkl	# 謎のファイル
+001-audio.mono.wav	# モノラル & WAV化したファイル
+001-audio.mono.json # 指標の値
+001-audio.mono.jpg  # いい感じにグラフ
+001-audio.mono.pkl	# 謎のファイル
 ```
 
 指標の値はこんな感じ
