@@ -67,7 +67,7 @@ example ディレクトリで実行してみよう
 
 ```sh
 ❯ cd example
-❯ amb 1_bouba_woman.wav
+❯ amb data .wav outputs
 ```
 
 以下のようにファイルがたくさんつくられる
