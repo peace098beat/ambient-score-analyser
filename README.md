@@ -2,25 +2,63 @@
 # Ambient Analyser
 オーディオデータから、Loudness, Sharpness, Rughness を算出するやつ
 
+```
+❯ amb data .wav outputs
+
+                 _     _            _   
+                | |   (_)          | |  
+  __ _ _ __ ___ | |__  _  ___ _ __ | |_ 
+ / _` | '_ ` _ \| '_ \| |/ _ \ '_ \| __|
+| (_| | | | | | | |_) | |  __/ | | | |_ 
+ \__,_|_| |_| |_|_.__/|_|\___|_| |_|\__|
+
+
+Hello Ambient!
+Arthur @peace098beat
+
+
+Work_dir Dir:/Users/nopara/Codes/ambient-analysis/tests
+Input Dir:/Users/nopara/Codes/ambient-analysis/tests/data
+Output Dir:/Users/nopara/Codes/ambient-analysis/tests/outputs
+
+be Transforming... 
+Plz take a coffee brake :D
+Signal resampled to 48 kHz to allow calculation.
+Loudness ..
+Sharpness ..
+Roughness ..
+Roughness is being calculated
+Signal resampled to 48 kHz to allow calculation.
+Loudness ..
+Sharpness ..
+Roughness ..
+Roughness is being calculated
+
+
+Fin! Check your sounds!  :D
+
+
+
+```
 
 ## インストール
 
-ffmpeg
+### 1. Install ffmpeg
 
 ```sh
 ❯ brew install ffmpeg
 ```
 
-python packages
+### 2. Install python packages
 
 ```sh
 ❯ pip3 install -r requirements.txt
 ```
 
-amb packages
+### 3. Install Ambient
 
 ```sh
-❯ pip3 install -e .
+❯ python3 setup.py install
 ```
 
 ## 使いかた
