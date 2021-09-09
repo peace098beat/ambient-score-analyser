@@ -84,13 +84,3 @@ def run_dir(in_dir, ext, out_dir):
     return out_files_s
 
 
-# def get_arg():
-#     parser = argparse.ArgumentParser(description='ambient analyser')
-#     parser.add_argument('--in_file', help='オーディオファイル')
-#     args = parser.parse_args()
-#     print('in_file='+args.in_file)
-#     return args
-
-# if __name__ == '__main__':
-#     args = get_arg()
-#     main(args.in_file, args.out_dir)
