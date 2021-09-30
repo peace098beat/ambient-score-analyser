@@ -7,8 +7,8 @@
 """
 from pathlib import Path
 
-import monolizer
-import featurizer
+from . import monolizer
+from . import featurizer
 
 from logging import getLogger
 logger = getLogger(__name__)

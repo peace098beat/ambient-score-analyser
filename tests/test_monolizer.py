@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-import monolizer
+from amb import monolizer
 
 def test_monolize():
 

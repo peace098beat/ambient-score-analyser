@@ -5,7 +5,7 @@ setup(
     version='0.1',
     # package_dir = {'': 'src'},
     packages=find_packages("src"),
-    py_modules=['featurizer', "monolizer", "pipeline", "script"],
+    # py_modules=['featurizer', "monolizer", "pipeline", "script"],
     install_requires=[
         'Click',
         'mosqito',
@@ -15,6 +15,6 @@ setup(
     ],
     entry_points='''
         [console_scripts]
-        amb=script:cli
+        amb=amb.script:cli
     ''',
 )

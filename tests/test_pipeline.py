@@ -2,7 +2,7 @@ from pathlib import Path
 import tempfile
 
 import pytest
-import pipeline
+from amb import pipeline
 
 
 def test_pipeline():

@@ -5,7 +5,7 @@ import tempfile
 import shutil
 
 import pytest
-import pipeline
+from amb import pipeline
 
 
 work_dir = Path(__file__).parent.resolve()

@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-import script
+from amb import script
 
 
 cwd = os.getcwd()

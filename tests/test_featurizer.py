@@ -3,8 +3,8 @@ from pathlib import Path
 
 import pytest
 
-import monolizer
-import featurizer
+from amb import monolizer
+from amb import featurizer
 
 def test_featurizer():
 

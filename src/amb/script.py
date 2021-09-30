@@ -2,8 +2,8 @@ import os
 from pathlib import Path
 
 import click
-import pipeline
-import post_process
+from . import pipeline
+from . import post_process
 
 
 banner = '''
