@@ -91,7 +91,7 @@ def cli(in_dir, ext, out_dir):
     click.echo(f'Input Dir:{in_dir}')
     click.echo(f'Output Dir:{out_dir}')
 
-    click.echo(f'be Transforming... Plz take a coffee brake :D')
+    click.echo(f'be Transforming... Plz take a coffee brake 🧉 :D')
 
     try:
         outputs = pipeline.run_dir(in_dir, ext, out_dir)
