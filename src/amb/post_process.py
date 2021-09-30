@@ -1,5 +1,3 @@
-# post_process.py
-
 import glob
 import json
 from pathlib import Path
@@ -31,8 +29,8 @@ def post_process(out_dir):
 
         datas.append(data)
 
-
-    colorlist = ['tab:blue', 'tab:orange', 'tab:green', 'tab:red', 'tab:purple', 'tab:brown', 'tab:pink', 'tab:gray', 'tab:olive', 'tab:cyan']
+    colorlist = ['tab:blue', 'tab:orange', 'tab:green', 'tab:red', 'tab:purple',
+                 'tab:brown', 'tab:pink', 'tab:gray', 'tab:olive', 'tab:cyan']
     y_feature = "loudness"
     x_features = ["sharpness", "roughness"]
 
@@ -42,30 +40,31 @@ def post_process(out_dir):
     axs = ax.flatten()
 
     for ax_no in [0, 1]:
-        
+
         plt.sca(axs[ax_no])
-        
+
         for i, data in enumerate(datas):
             in_file = data["in_file"]
 
             wav_name = in_file.split("/")[-1]
 
-            x_feature= x_features[ax_no]
+            x_feature = x_features[ax_no]
             x = data[x_feature]
             y = data[y_feature]
 
             if len(datas) <= len(colorlist):
-                
+
                 c = colorlist[i]
             else:
                 c = "tab:orange"
-            
-            plt.plot(x, y , "o", markersize=10, color=c, label=wav_name, alpha=0.75)
+
+            plt.plot(x, y, "o", markersize=10, color=c,
+                     label=wav_name, alpha=0.75)
             plt.text(x, y, wav_name, color="#000000",
-                                     fontfamily="serif",
-                                     #fontweight="bold",
-                                     fontstyle="italic",
-                                     fontsize=12)
+                     fontfamily="serif",
+                     # fontweight="bold",
+                     fontstyle="italic",
+                     fontsize=12)
 
         # axs[0].set_xlim([0, 6])
         # axs[0].set_ylim([0, 21])
@@ -76,5 +75,3 @@ def post_process(out_dir):
         plt.grid()
 
     plt.savefig(Path(out_dir) / f"Loudness-vs-Sharpnes-Roghness.jpg")
-
-

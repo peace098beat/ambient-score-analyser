@@ -5,6 +5,8 @@
     > python main.py --target ../data/1_test.wav --outdir ../outputs
 
 """
+import glob
+import shutil
 from pathlib import Path
 
 from . import monolizer
@@ -15,8 +17,9 @@ logger = getLogger(__name__)
 
 logger.debug(__name__)
 
+
 def run(in_file):
-    
+
     # 1. Monolize
     try:
         mono_file = monolizer.to_mono(in_file)
@@ -38,8 +41,7 @@ def run(in_file):
 
     return outputs
 
-import glob
-import shutil
+
 def run_dir(in_dir, ext, out_dir):
 
     assert Path(in_dir).exists(), in_dir
@@ -79,8 +81,4 @@ def run_dir(in_dir, ext, out_dir):
         import sys
         sys.exit(0)
 
-
-
     return out_files_s
-
-
