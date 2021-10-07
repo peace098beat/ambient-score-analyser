@@ -37,4 +37,5 @@ jobs:
         pytest
     - name: Test with amb
       run: |
+        amb-hello
         amb --help
