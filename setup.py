@@ -2,19 +2,18 @@ from setuptools import setup, find_packages
 
 setup(
     name='amb',
-    version='0.1',
-    # package_dir = {'': 'src'},
-    packages=find_packages("src"),
-    # py_modules=['featurizer', "monolizer", "pipeline", "script"],
+    version='0.2',
+    packages=["amb"],
     install_requires=[
-        'Click',
         'mosqito',
         'numpy',
         'matplotlib',
         'japanize-matplotlib',
+        'Click',
     ],
     entry_points='''
         [console_scripts]
         amb=amb.script:cli
+        amb-hello=amb.script:hello
     ''',
 )
