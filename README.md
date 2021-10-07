@@ -1,3 +1,4 @@
+[![Python application](https://github.com/peace098beat/ambient-score-analyser/actions/workflows/python-app.yml/badge.svg)](https://github.com/peace098beat/ambient-score-analyser/actions/workflows/python-app.yml)
 
 # Ambient Analyser
 オーディオデータから、Loudness, Sharpness, Rughness を算出するやつ

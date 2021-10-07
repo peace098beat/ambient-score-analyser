@@ -66,6 +66,7 @@ def run_dir(in_dir, ext, out_dir):
 
         for out_file in out_files_s:
             assert Path(out_file).exists(), out_file
+            Path(out_dir).mkdir(exist_ok=True, parents=True)
             dist_p = Path(out_dir) / Path(out_file).name
             a = shutil.move(out_file, dist_p)
             assert Path(a).exists(), a

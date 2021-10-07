@@ -1,7 +1,11 @@
+env-install:
+	pipenv install
+
 test:
 	pipenv run pip install .
-	pipenv run amb --help
-	pipenv run pip uninstall amb
+	pipenv run pytest ./tests/*
+	pipenv run amb-hello
+	pipenv run pip uninstall -y amb
 
 install:
 	pipenv run pip install .
