@@ -1,12 +1,7 @@
-# test_pipeline_dir.py
-
 from pathlib import Path
-import tempfile
 import shutil
 
-import pytest
-import pipeline
-
+from amb import pipeline
 
 work_dir = Path(__file__).parent.resolve()
 
@@ -16,7 +11,6 @@ def test_pipeline_dir():
     in_dir = "data"
     ext = "wav"
     out_dir = "outputs/test_pipeline_dir"
-
 
     # Setup in_dir
     in_dir = Path(work_dir, in_dir)
@@ -50,7 +44,3 @@ def test_pipeline_dir():
 
     n_json = len(list(Path(out_dir).glob("*.json")))
     assert n_audios == n_json
-
-
-if __name__ == '__main__':
-    print(__FILE__)
